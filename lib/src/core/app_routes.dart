@@ -3,7 +3,6 @@ import 'package:go_router/go_router.dart';
 import '../ui/1_onboarding/onboarding.dart';
 import '../ui/2_beranda/home.dart';
 import '../ui/3_building_on_region/region.dart';
-import '../ui/4_building_detail/';
 
 // GoRouter configuration
 final router = GoRouter(

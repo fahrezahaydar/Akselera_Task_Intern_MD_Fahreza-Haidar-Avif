@@ -10,6 +10,7 @@ import '../../widgets/appbar.dart';
 import '../../widgets/bottom_navigation_bar.dart';
 import '../../widgets/building_card.dart';
 import '../../widgets/dot_indicator.dart';
+import '../../widgets/loader.dart';
 import 'widgets/blog_card.dart';
 import 'widgets/card.dart';
 import 'widgets/place.dart';
@@ -26,46 +27,54 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomNavigationBar: const BottomNavBar(),
-      body: SingleChildScrollView(
-        child: Stack(
-          children: [
-            Image.asset(
-              AppAssets.barBg,
-              width: double.maxFinite,
-              fit: BoxFit.fitWidth,
-            ),
-            Column(
-              spacing: 10,
+    return FutureBuilder(
+      future: Future.delayed(Duration(seconds: 2)),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Scaffold(body: Center(child: BouncingCirclesLoader()));
+        }
+        return Scaffold(
+          bottomNavigationBar: const BottomNavBar(),
+          body: SingleChildScrollView(
+            child: Stack(
               children: [
-                AppAppbar(
+                Image.asset(
+                  AppAssets.barBg,
+                  width: double.maxFinite,
+                  fit: BoxFit.fitWidth,
+                ),
+                Column(
+                  spacing: 10,
                   children: [
-                    Image.asset(
-                      AppAssets.logo,
-                      height: 26,
-                      fit: BoxFit.fitHeight,
+                    AppAppbar(
+                      children: [
+                        Image.asset(
+                          AppAssets.logo,
+                          height: 26,
+                          fit: BoxFit.fitHeight,
+                        ),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Image.asset(
+                            AppAssets.help,
+                            height: 20,
+                            fit: BoxFit.fitHeight,
+                          ),
+                        ),
+                      ],
                     ),
-                    IconButton(
-                      onPressed: () {},
-                      icon: Image.asset(
-                        AppAssets.help,
-                        height: 20,
-                        fit: BoxFit.fitHeight,
-                      ),
-                    ),
+                    const AdsSection(),
+                    const RegionShorcutSection(),
+                    const MostVisitedSection(),
+                    const PromoSection(),
+                    const BlogSection(),
                   ],
                 ),
-                const AdsSection(),
-                const RegionShorcutSection(),
-                const MostVisitedSection(),
-                const PromoSection(),
-                const BlogSection(),
               ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

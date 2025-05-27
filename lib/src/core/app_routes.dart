@@ -1,5 +1,6 @@
 import 'package:go_router/go_router.dart';
 
+import '../ui/0_splash/splash.dart';
 import '../ui/1_onboarding/onboarding.dart';
 import '../ui/2_beranda/home.dart';
 import '../ui/3_building_on_region/region.dart';
@@ -7,8 +8,13 @@ import '../ui/4_building_detail/building_detail_screen.dart';
 
 // GoRouter configuration
 final router = GoRouter(
-  initialLocation: Routes.onboarding,
+  initialLocation: Routes.splash,
   routes: [
+    GoRoute(
+      name: Routes.splash,
+      path: Routes.splash,
+      builder: (context, state) => SplashScreen(),
+    ),
     GoRoute(
       name: Routes.onboarding,
       path: Routes.onboarding,
@@ -40,6 +46,7 @@ final router = GoRouter(
 );
 
 class Routes {
+  static String splash = "/splash";
   static String onboarding = '/onboarding';
   static String home = "/home";
   static String regionBase = "/region";

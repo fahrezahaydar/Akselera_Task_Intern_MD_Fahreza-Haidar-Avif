@@ -29,6 +29,7 @@ class AppTs {
     fontFamily: GoogleFonts.poppins().fontFamily,
     fontSize: 14,
     fontWeight: FontWeight.w500,
+    color: AppColors.blackText,
   );
   static TextStyle sh1 = TextStyle(
     fontFamily: GoogleFonts.urbanist().fontFamily,
@@ -48,7 +49,7 @@ class AppTs {
     fontWeight: FontWeight.w500,
     color: AppColors.blackSoftText,
   );
-  
+
   static TextStyle p1 = TextStyle(
     fontFamily: GoogleFonts.urbanist().fontFamily,
     fontSize: 16,
@@ -70,5 +71,4 @@ class AppTs {
     fontSize: 10,
     fontWeight: FontWeight.w400,
   );
-
 }

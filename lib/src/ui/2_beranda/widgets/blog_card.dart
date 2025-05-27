@@ -37,18 +37,25 @@ class BlogWidget extends StatelessWidget {
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Image.asset(data.img, fit: BoxFit.fitWidth, width: width),
-            Container(
+            Padding(
               padding: const EdgeInsets.all(12),
-              height: 56,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
                 spacing: 12,
                 children: [
-                  Text(
-                    data.title,
-                    style: AppTs.h6.copyWith(color: AppColors.blackText),
+                  SizedBox(
+                    height: 32,
+                    child: Text(
+                      data.title,
+                      style: AppTs.h6.copyWith(fontSize: 12),
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
                   ),
                   Text(
                     data.dateToString,

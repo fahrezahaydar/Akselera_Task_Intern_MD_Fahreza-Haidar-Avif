@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../core/app_assets.dart';
 import '../../core/app_colors.dart';
+import '../../core/app_routes.dart';
 import '../../core/app_ts.dart';
 import '../../widgets/appbar.dart';
 import '../../widgets/building_card.dart';
 
 class RegionScreen extends StatelessWidget {
-  const RegionScreen({super.key});
+  const RegionScreen({super.key, required this.regionName});
+  final String regionName;
 
   @override
   Widget build(BuildContext context) {
@@ -20,14 +23,19 @@ class RegionScreen extends StatelessWidget {
       appBar: AppAppbar(
         children: [
           IconButton(
-            onPressed: () {},
+            onPressed: () {
+              context.pop();
+            },
             icon: Icon(
               Icons.chevron_left_rounded,
               color: AppColors.blackText,
               weight: 0.5,
             ),
           ),
-          Text("Medan", style: AppTs.h3.copyWith(color: AppColors.blackText)),
+          Text(
+            regionName,
+            style: AppTs.h3.copyWith(color: AppColors.blackText),
+          ),
           IconButton(
             onPressed: () {},
             icon: Image.asset(
@@ -49,7 +57,7 @@ class RegionScreen extends StatelessWidget {
         itemCount: 18,
         itemBuilder: (context, index) {
           return BuildingCard(
-            onPressed: () {},
+            onPressed: () => context.push(Routes.building(index)),
             img: dummy[index % 2][0],
             label: dummy[index % 2][1],
           );

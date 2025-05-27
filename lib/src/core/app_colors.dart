@@ -5,6 +5,7 @@ class AppColors {
   //Warna Utama
   static const Color primary = Color(0xFFFFD700);
   static const Color darkGrey = Color(0xFFBFBFBF);
+  static const Color blue = Color(0xFF007ACC);
 
   //Text Color
   static const Color black = Color(0xFF1c1c1c);

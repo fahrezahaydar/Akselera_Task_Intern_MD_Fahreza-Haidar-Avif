@@ -7,13 +7,13 @@ class OnboardingRepository {
     Onboarding(
       title: "Terhubung. Berkembang. Bersama",
       subtitle:
-          "Mewakili semangat kolaborasi dan pertumbuhan komunitas profesional di Indonesia.",
+          "Mewakili semangat kolaborasi dan pertumbuhan komunitas profesional \ndi Indonesia.",
       img: AppAssets.onboarding1,
     ),
     Onboarding(
       title: "Ruangmu. Gayamu. Bisnismu.",
       subtitle:
-          "Menekankan fleksibilitas dan personalisasi yang ditawarkan oleh UnionSpace.",
+          "Menekankan fleksibilitas dan personalisasi yang ditawarkan oleh \nUnionSpace.",
       img: AppAssets.onboarding2,
     ),
     Onboarding(

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'src/core/app_colors.dart';
 import 'src/core/app_routes.dart';
@@ -24,6 +23,13 @@ class MyApp extends StatelessWidget {
             backgroundColor: Colors.transparent,
             shape: CircleBorder(),
             side: BorderSide(color: AppColors.blackText, width: 0.5),
+          ),
+        ),
+        filledButtonTheme: FilledButtonThemeData(
+          style: FilledButton.styleFrom(
+            minimumSize: const Size.fromHeight(56),
+            backgroundColor: AppColors.primary,
+            foregroundColor: AppColors.black,
           ),
         ),
       ),

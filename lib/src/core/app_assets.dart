@@ -15,6 +15,7 @@ class AppAssets {
   static const String profile = "assets/images/Profile.png";
 
   static const String send = "assets/images/Send.png";
+  static const String sendOutlined = "assets/images/send_outlined.png";
 
   static const String pik = "assets/images/pik.png";
   static const String tower1 = "assets/images/tower-1.png";
@@ -24,4 +25,9 @@ class AppAssets {
 
   static const String blog1 = "assets/images/blog-1.png";
   static const String blog2 = "assets/images/blog-2.png";
+
+  static const String room1 = "assets/images/room1.png";
+  static const String room2 = "assets/images/room2.png";
+  static const String room3 = "assets/images/room3.png";
+  static const String room4 = "assets/images/room4.png";
 }

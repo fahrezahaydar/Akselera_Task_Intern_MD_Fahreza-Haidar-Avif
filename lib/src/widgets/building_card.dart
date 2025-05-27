@@ -8,8 +8,8 @@ class BuildingCard extends StatelessWidget {
     super.key,
     required this.img,
     required this.label,
-     this.width,
-     this.height,
+    this.width,
+    this.height,
     required this.onPressed,
   });
   final String img;

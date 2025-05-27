@@ -22,14 +22,15 @@ class CommonCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
-        spacing: 8,
+        spacing: 18,
         children: [
           ListTile(
-            contentPadding: EdgeInsets.zero,
-            title: Text(title, style: AppTs.h4),
+            title: Text(title, style: AppTs.h5),
             subtitle: Text(subtitle, style: AppTs.p2),
-            
             trailing: trailing,
+            contentPadding: EdgeInsets.zero,
+            minVerticalPadding: 0,
+            minTileHeight: 40,
           ),
           child,
         ],

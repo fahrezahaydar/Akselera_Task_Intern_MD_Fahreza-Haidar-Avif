@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../core/app_colors.dart';
 import '../../core/app_ts.dart';
 import '../../data/model/building_model.dart';
+import '../../widgets/loader.dart';
 import 'section/details_section.dart';
 import 'section/header_section.dart';
 import 'section/hero.dart';
@@ -24,9 +25,7 @@ class DetailScreen extends StatelessWidget {
       future: fetchBuildingById(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Scaffold(
-            body: Center(child: CircularProgressIndicator()),
-          );
+          return const Scaffold(body: Center(child: BouncingCirclesLoader()));
         }
 
         if (snapshot.hasError) {
